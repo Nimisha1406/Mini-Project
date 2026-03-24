@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+        }
+        textarea, input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            background: #ff758c;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Internship Fraud Detector</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label><b>Paste message / job description:</b></label><br>
+        <textarea name="message" rows="5" placeholder="Enter job message here..." required></textarea><br>
+
+        <label><b>Stipend offered (₹):</b></label><br>
+        <input type="number" name="stipend" placeholder="Enter stipend" required><br>
+
+        <label><b>Registration fee asked (₹):</b></label><br>
+        <input type="number" name="fee" placeholder="Enter fee (0 if none)" required><br>
+
+        <label><b>Did the message come from official company email?</b></label><br>
+        <input type="radio" name="official_email" value="1" required> Yes (e.g. hr@company.com)<br>
+        <input type="radio" name="official_email" value="0"> No (e.g. Gmail/Yahoo)<br><br>
+
+        <label><b>Upload image (optional):</b></label><br>
+        <input type="file" name="file"><br><br>
+
+        <button type="submit">Check Fraud</button>
+
+    </form>
+
+    {% if result %}
+        <h3 class="result">{{ result }}</h3>
+        <h3>Risk Score: {{ risk }}%</h3>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
