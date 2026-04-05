@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>LOGIN</h1>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"?v=2>
+
+  {% if error %}
+      <p class="error">{{ error }}</p>
+  {% endif %}
+
+  <form action="/login" method="post">
+
+      <div class="input-group">
+          <input type="text" name="email" placeholder="Email or Username" required>
+      </div>
+
+      <div class="input-group">
+          <input type="password" name="password" placeholder="Password" required>
+      </div>
+
+      <button type="submit">Login</button>
+  </form>
+
+  <p class="switch">
+      New user? <a href="/signup_page">Create account</a>
+  </p>
+</div>

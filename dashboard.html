@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Dashboard</h1>
+    <p>Select detection method:</p>
+
+    <div class="dashboard-buttons">
+        <a href="/form"><button>📝 Check via Text</button></a>
+        <a href="/image"><button>🖼 Check via Image</button></a>
+    </div>
+
+    <br>
+    <a href="/logout"><button class="logout">Logout</button></a>
+</div>
+
+</body>
+</html>

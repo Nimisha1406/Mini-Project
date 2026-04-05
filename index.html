@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Text Fraud Detection</h1>
+
+    <form action="/predict" method="post">
+
+        <textarea name="description" placeholder="Paste internship offer or description here..." required></textarea>
+
+        <button type="submit">Check Fraud</button>
+
+    </form>
+
+    <br>
+    <a href="/dashboard"><button>Back</button></a>
+
+</div>
+
+</body>
+</html>

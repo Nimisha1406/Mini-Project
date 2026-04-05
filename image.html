@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Upload Offer Letter</h1>
+
+    <form action="/predict_image" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Analyze Image</button>
+    </form>
+
+    <br>
+    <a href="/dashboard"><button>Back</button></a>
+
+</div>
+
+</body>
+</html>

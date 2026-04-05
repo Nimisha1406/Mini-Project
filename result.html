@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Detection Result</h1>
+
+    {% if description %}
+        <p class="desc"><b>Text:</b> {{ description }}</p>
+    {% endif %}
+
+    <div class="result-box">
+        <h3>Extracted Details</h3>
+        
+        <p><b>Stipend:</b> ₹{{ stipend }}</p>
+        <p><b>Fee:</b> ₹{{ fee }}</p>
+    </div>
+
+    <div class="result-box {% if result == 'Fraud ❌' %}result-fraud{% else %}result-legit{% endif %}">
+        <h2>{{ result }}</h2>
+        <p class="percentage">{{ percentage }}% confidence</p>
+    </div>
+
+    <div class="buttons">
+        <a href="/dashboard"><button>Dashboard</button></a>
+        <a href="/form"><button>Check Again</button></a>
+        <a href="/logout"><button class="logout">Logout</button></a>
+    </div>
+
+</div>
+
+</body>
+</html>
